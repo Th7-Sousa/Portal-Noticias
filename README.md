@@ -1,2 +1,2 @@
 # Portal-Estudantes
-Projeto portal de notícias para estudantes da Unifesspa..
+Projeto portal de notícias para estudantes da Unifesspa.
