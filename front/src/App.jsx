@@ -3,7 +3,7 @@ function App() {
 
   return (
     <div className="App">
-      apppp
+      chamar as rota
     </div>
   )
 }
