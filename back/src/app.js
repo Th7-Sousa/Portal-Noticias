@@ -4,7 +4,7 @@ import routes from "./routes/index.js";
 
 dataBase.on("error", console.log.bind(console, "Erro de conexão"));
 dataBase.once("open", () => {
-  console.log("Conecção feita");
+  console.log("Conecção com db concluída");
 });
 
 const app = express();
