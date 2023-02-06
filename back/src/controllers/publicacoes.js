@@ -1,4 +1,4 @@
-import publicacoes from '../models/Publicacoes';
+import publicacoes from '../models/Publicacoes.js';
 
 class publicacoesController {
  

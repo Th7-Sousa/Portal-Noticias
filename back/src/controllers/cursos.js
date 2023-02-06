@@ -1,4 +1,4 @@
-import cursos from '../models/Cursos';
+import cursos from '../models/Cursos.js';
 
 class cursosController {
   static listarCursos = (req, res) => {
