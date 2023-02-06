@@ -14,7 +14,7 @@ class userController {
     const id = req.params.id;
     user
       .findById(id)
-      .populate("autor", "nome")
+      .populate("cursos", "nome")
       .exec((err, user) => {
         if (err) {
           res
