@@ -1,6 +1,12 @@
 import publicacoes from "../models/Publicacoes.js";
 
 class publicacoesController {
+  static listarPubli = (req, res) => {
+    publicacoes.find((err, publi) => {
+      res.status(200).json(publi);
+    });
+  };
+
   static novaPubli = (req, res) => {
     let publicacao = new publicacoes(req.body);
     publicacao.save((err) => {
