@@ -1,9 +1,9 @@
 import express from "express";
-import dataBase from "./config/dbConnect.js";
+import portal_db from "./config/dbConnect.js";
 import routes from "./routes/index.js";
 
-dataBase.on("error", console.log.bind(console, "Erro de conexão"));
-dataBase.once("open", () => {
+portal_db.on("error", console.log.bind(console, "Erro de conexão"));
+portal_db.once("open", () => {
   console.log("Conexão com db concluída");
 });
 

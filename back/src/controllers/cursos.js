@@ -1,4 +1,4 @@
-import cursos from '../models/Cursos.js';
+import cursos from "../models/Cursos.js";
 
 class cursosController {
   static listarCursos = (req, res) => {
@@ -8,14 +8,14 @@ class cursosController {
   };
 
   static cadastrarCurso = (req, res) => {
-    let cursos = new cursos(req.body);
-    cursos.save((err) => {
+    let curso = new cursos(req.body);
+    curso.save((err) => {
       if (err) {
         res
           .status(500)
           .send({ message: `${err.message} - Falha ao cadastrar curso!` });
       } else {
-        res.status(201).send(cursos.toJSON());
+        res.status(201).send(curso.toJSON());
       }
     });
   };

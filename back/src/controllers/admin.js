@@ -8,14 +8,14 @@ class adminController {
   };
 
   static cadastrarAdmin = (req, res) => {
-    let admin = new admin(req.body);
-    admin.save((err) => {
+    let adm = new admin(req.body);
+    adm.save((err) => {
       if (err) {
         res
           .status(500)
           .send({ message: `${err.message} - Falha ao cadastrar admin` });
       } else {
-        res.status(201).send(admin.toJSON());
+        res.status(201).send(adm.toJSON());
       }
     });
   };

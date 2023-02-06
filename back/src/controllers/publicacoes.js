@@ -1,16 +1,15 @@
-import publicacoes from '../models/Publicacoes.js';
+import publicacoes from "../models/Publicacoes.js";
 
 class publicacoesController {
- 
   static novaPubli = (req, res) => {
-    let publicacoes = new publicacoes(req.body);
-    publicacoes.save((err) => {
+    let publicacao = new publicacoes(req.body);
+    publicacao.save((err) => {
       if (err) {
         res
           .status(500)
           .send({ message: `${err.message} - Falha ao adicionar publicação!` });
       } else {
-        res.status(201).send(publicacoes.toJSON());
+        res.status(201).send(publicacao.toJSON());
       }
     });
   };
