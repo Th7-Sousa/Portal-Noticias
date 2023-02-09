@@ -1,10 +1,12 @@
+import { BrowserRouter } from "react-router-dom"
+import { Routers } from "./routes/routers"
+
 function App() {
 
-
   return (
-    <div className="App">
-      chamar as rota
-    </div>
+    <BrowserRouter>
+      <Routers />
+    </BrowserRouter>
   )
 }
 
