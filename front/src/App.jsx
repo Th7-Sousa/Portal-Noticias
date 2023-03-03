@@ -1,12 +1,13 @@
-import { BrowserRouter } from "react-router-dom"
-import { Routers } from "./routes/routers"
+import './index.css'
+import Rotas from '../src/Routers';
+import Navbar from "../src/components/navBar/index";
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
+    <div>
+      <Rotas />
+    </div>
   )
 }
 
