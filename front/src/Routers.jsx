@@ -8,6 +8,7 @@ const Rotas = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route index element={<Cadastro />} />
                 <Route path="/" element={<Cadastro />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/Sobre" element={<Sobre />} />
