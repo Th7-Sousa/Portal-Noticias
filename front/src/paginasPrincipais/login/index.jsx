@@ -1,67 +1,49 @@
-import React from 'react';
-import { Style } from './styles';
-import login from '../../assets/login.svg';
+import { Style } from './styles'
+import logo from './../../assets/logotipof5.png'
 
 const Login = () => {
 
-
-
   function handleLogin(event) {
     event.preventDefault();
-    const data = {
-      email: document.getElementById("email").value,
-      senha: document.getElementById("password").value,
-    };
-
   }
 
   return (
     <>
       <Style>
         <div className='login-page'>
-          <section>
-            <img className='img-ilustrativa-login' src={login} alt={"imagem ilustrativa de login"} />
-          </section>
 
+          <div className='modal'>
 
-
-          <section className='section-form'>
             <div className='boas-vindas'>
               <h1>Portal Unifesspa F5</h1>
             </div>
 
-            <h3>Login</h3>
+            <form onSubmit={handleLogin} >
 
-            <form onSubmit={handleLogin}>
+              <h3>Login</h3>
 
-              <section className='section-input'>
-                <label htmlFor="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  placeholder="Insira seu email"
-                  required
-                />
-                <br />
-                <label htmlFor="password">Senha</label>
-                <input
-                  id="password"
-                  type="password"
-                  placeholder="Insira sua senha"
-                  required
-                />
-              </section>
+              <input type='email' placeholder='Insira seu email' />
+              <input type='password' placeholder='Insira sua senha' />
 
-              <button>Entrar</button>
-
-
+              <button type='submit'>Entrar</button>
             </form>
-          </section>
+
+            <section className='section-link'>
+              <p>Não possui uma conta?
+                <a className='link-login' href="/">Cadastre-se</a
+                ></p>
+            </section>
+
+            <section className='section-logo'>
+              <img className='logo' src={logo} alt="Logo F5" />
+            </section>
+
+          </div>
 
         </div>
       </Style>
     </>
-  );
+  )
 }
 
 export default Login;

@@ -11,7 +11,6 @@ export const Style = Styled.div`
     background-repeat: no-repeat;
     background-size: 100% 100vh;
     min-height: 100vh;
-
     padding: 0 2rem;
 }
 

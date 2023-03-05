@@ -1,76 +1,100 @@
 import Styled from "styled-components";
+import backgrounLogin from "./../../assets/background-login.png";
 
 export const Style = Styled.div`
 
 .login-page {
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 4rem;
-    max-height: max-content;
-    padding: 3rem 2rem;
+    background: url(${backgrounLogin});
+    background-repeat: no-repeat;
+    background-size: 100% 100vh;
+    min-height: 100vh;
+    padding: 0 2rem;
 }
 
-.img-ilustrativa-login {
-    width: 20rem;
+.modal {
+    background-color: #fff;
+    padding: 0 4rem 1rem 4rem;
+    border-radius: 1.5rem;
 }
 
-.section-form {
-    max-width: max-content;
-    max-height: max-content;
+.boas-vindas {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: 3px solid #127F30;
-    border-radius: 0.5rem;
-    padding: 0.3rem 1rem 2rem 1rem;
-}
-.section-form .boas-vindas {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.section-form h1 {
+
+h1 {
     color: #127F30;
-    max-width: max-content;
-    max-height: max-content;
+    text-align: center;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
     align-items: center;
+    gap: 1.3rem;
 }
 
-.section-input {
-    display: flex;
-    flex-direction: column;
-    gap: 0.1rem;
-}
-label {
-    font-weight: bold;
-    color: #000000;
-}
 input {
-    width: 20rem;
-    padding: 0.3rem 0.3rem;
-    border: 2px solid #000;
-    border-radius: 0.5rem;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding-bottom: 3px;
+    width: 100%;
+}
+input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+input::placeholder {
+    color: #A9A2A2;
+}
+
+.section-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #837979;
+}
+
+.section-link p{
+    font-size: 14px;
+}
+
+.link-login {
+    padding-left: 7px;
+    color: #068FDC;
+    text-decoration: none;
 }
 
 button {
+    color: #fff;
     background-color: #127F30;
-    color: #FFFFFF;
-    padding: 0.4rem 2.5rem;
+    padding: 0.6rem 4rem;
+    width: 100%;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0.3rem;
+    margin-top: 0.3rem;
     cursor: pointer;
 }
 
+.section-logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+}
+
+.logo {
+    max-width: 80px;
+}
+
+@media (min-width: 620px) {
+    h1 {
+        padding: 0 4rem;
+    }
+}
 
 `;
