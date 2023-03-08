@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Cadastro from './paginasPrincipais/cadastro';
 import Login from './paginasPrincipais/login';
+import Home from './paginasPrincipais/home';
+import Publicacao from './paginasPrincipais/publicacao';
 
 import GerenciarPublicacoes from './paginasPrincipais/gerenciarPublicacoes';
 import CriarPublicacao from './paginasPrincipais/criarPublicacao';
@@ -20,6 +22,9 @@ const Rotas = () => {
                 <Route path="/editarPublicacao" element={<EditarPublicacao />} />
 
                 <Route path="/perfilUser" element={<PerfilUser />} />
+                <Route path="/Sobre" element={<Sobre />} />
+                <Route path="/publicacao" element={<Publicacao />} />
+                <Route path="/home" element={<Home />} />
             </Routes>
         </BrowserRouter>
     )
