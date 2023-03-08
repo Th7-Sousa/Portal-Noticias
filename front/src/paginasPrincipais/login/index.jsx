@@ -12,6 +12,7 @@ const Login = () => {
       <Style>
         <div className='login-page'>
 
+
           <div className='modal'>
 
             <div className='boas-vindas'>
@@ -26,6 +27,7 @@ const Login = () => {
               <input type='password' placeholder='Insira sua senha' />
 
               <button type='submit'>Entrar</button>
+
             </form>
 
             <section className='section-link'>
@@ -37,7 +39,7 @@ const Login = () => {
             <section className='section-logo'>
               <img className='logo' src={logo} alt="Logo F5" />
             </section>
-
+            <a href="/gerenciarPublicacoes">Admin</a>
           </div>
 
         </div>
