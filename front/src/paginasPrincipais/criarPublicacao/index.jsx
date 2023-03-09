@@ -1,11 +1,15 @@
 import { Style } from './styles'
 import ButtonDefault from "././../../components/button-default/index"
+import Rodape from "././../../components/rodape/index"
+import NavAdmin from '../../components/navAdmin';
 
 const CriarPublicacao = () => {
     return (
         <>
             <Style>
                 <div className='criarPubli-page'>
+
+                    <div className="nav"><NavAdmin /></div>
 
                     <h1>Criar Publicação</h1>
 
@@ -31,6 +35,8 @@ const CriarPublicacao = () => {
                     </form>
 
                 </div>
+
+                <Rodape />
             </Style>
         </>
     );

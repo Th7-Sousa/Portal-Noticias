@@ -81,6 +81,11 @@ button {
     cursor: pointer;
 }
 
+#link-provisorio {
+    text-decoration: none;
+    color: #fff;
+}
+
 .section-logo {
     display: flex;
     justify-content: center;

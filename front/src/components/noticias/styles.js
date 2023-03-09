@@ -33,4 +33,9 @@ export const Style = Styled.div`
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
 `;

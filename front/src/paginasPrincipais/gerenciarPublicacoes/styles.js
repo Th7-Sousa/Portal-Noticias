@@ -6,7 +6,15 @@ export const Style = Styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 4rem 0 4rem;
+    padding: 0 4rem 5rem 4rem;
+}
+
+
+.nav {
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 .container-publicacoes {
@@ -88,7 +96,7 @@ export const Style = Styled.div`
 }
 
 
-.section-rodape {
+.container-rodape {
     border: 2px solid red;
     width: 100%;
 }

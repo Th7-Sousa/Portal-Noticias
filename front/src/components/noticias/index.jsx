@@ -7,39 +7,41 @@ const Noticias = () => {
         <>
             <Style>
                 <div className="feed">
-                    <div class='titulo'>Ultimas Noticias</div>
+                    <div class='titulo'>Últimas Noticias</div>
 
                     <div className="container-publicacoes">
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+
+                            <img src={PublicacaoImg} alt="publicação" />
+                            <a href="/publicacao"><h2>Titulo </h2></a>
+
+                        </div>
+                        <div class='card'>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                         <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
-                            <h2>Titulo </h2>
-                        </div>
-                        <div class='card'>
-                            <img src={PublicacaoImg} alt="publicação"/>
+                            <img src={PublicacaoImg} alt="publicação" />
                             <h2>Titulo </h2>
                         </div>
                     </div>

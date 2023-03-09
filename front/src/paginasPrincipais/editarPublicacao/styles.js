@@ -8,6 +8,14 @@ export const Style = Styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 4rem 3rem 4rem;
+    height: 100vh;
+}
+
+.nav {
+    display: flex;
+    padding: 5px;
+    width: 100%;
+    justify-content: flex-end;
 }
 
 form {

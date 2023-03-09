@@ -9,15 +9,19 @@ export const Style = Styled.div`
     padding: 0 4rem;
 }
 .destaques img{
-    width: 60%;
+    width: 80%;
     height: 50vh;
+}
+
+.destaques h4{
+    width: 80%;
 }
 
 .conteudo{
    display: flex;
    flex-direction: column;
    justify-content: space-between;
-   height: 99vh;
+   height: 100vh;
 }
 
 `;

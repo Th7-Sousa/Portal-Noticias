@@ -3,12 +3,18 @@ import { Style } from './styles'
 import PublicacaoImg from "./../../assets/publicacao-teste.png"
 import AdminCardPubli from "./../../components/adminCardPubli/index"
 import ButtonDefault from "../../components/button-default";
+import Rodape from "../../components/rodape";
+import NavAdmin from '../../components/navAdmin';
 
 const GerenciarPublicacoes = () => {
     return (
         <>
             <Style>
                 <div className="gerenciar-page">
+
+                    <div className="nav"><NavAdmin /></div>
+
+
 
                     <h1>Gerenciar Publicações</h1>
 
@@ -52,9 +58,8 @@ const GerenciarPublicacoes = () => {
 
 
 
-
                 </div>
-
+                <Rodape />
 
             </Style>
         </>

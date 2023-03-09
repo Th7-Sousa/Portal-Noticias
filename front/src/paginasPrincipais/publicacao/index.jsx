@@ -13,13 +13,13 @@ const Home = () => {
           <div className="destaques">
             <h1>Titulo da Noticia</h1>
             <img src={PublicacaoImg} alt="publicação" />
-            <h3>
-                {" "}
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla a
-                non odit cupiditate dicta dolores illum repellat ratione vero ea
-                architecto quas, corporis aliquam consequuntur aut dolor recusandae
-                quam natus!
-            </h3>
+            <h4>
+              {" "}
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla a
+              non odit cupiditate dicta dolores illum repellat ration vero ea
+              architecto quas, corporis aliquam consequuntur aut dolor recusandae
+              quam natus!
+            </h4>
           </div>
           <Rodape />
         </div>

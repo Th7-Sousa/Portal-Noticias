@@ -26,7 +26,11 @@ const Login = () => {
               <input type='email' placeholder='Insira seu email' />
               <input type='password' placeholder='Insira sua senha' />
 
-              <button type='submit'>Entrar</button>
+
+              <button >
+                <a id='link-provisorio' href="/home">Entrar</a>
+              </button>
+
 
             </form>
 

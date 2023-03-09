@@ -1,12 +1,16 @@
 import { Style } from './styles'
 import ButtonDefault from "././../../components/button-default/index"
 import PublicacaoImg from "./../../assets/publicacao-teste.png"
+import Rodape from '../../components/rodape';
+import NavAdmin from '../../components/navAdmin';
 
 const EditarPublicacao = () => {
     return (
         <>
             <Style>
                 <div className='criarPubli-page'>
+
+                    <div className="nav"><NavAdmin /></div>
 
                     <h1>Criar Publicação</h1>
 
@@ -32,6 +36,9 @@ const EditarPublicacao = () => {
                     </form>
 
                 </div>
+
+                <Rodape />
+
             </Style>
         </>
     );
