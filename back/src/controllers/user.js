@@ -9,18 +9,15 @@ class userController {
 
   static listarUserPorId = (req, res) => {
     const id = req.params.id;
-    user
-      .findById(id)
-      .populate("cursos", "nome")
-      .exec((err, user) => {
-        if (err) {
-          res
-            .status(400)
-            .send({ message: `${err.message} - Id do usuário não localizado` });
-        } else {
-          res.status(200).send(user);
-        }
-      });
+    user.findById(id).exec((err, user) => {
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message} - Id do usuário não localizado` });
+      } else {
+        res.status(200).send(user);
+      }
+    });
   };
 
   static cadastrarUser = (req, res) => {

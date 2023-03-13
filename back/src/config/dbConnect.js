@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-mongoose.connect("mongodb+srv://portal:0000@cluster0.xqucp9p.mongodb.net/test");
+mongoose.connect(
+  "mongodb+srv://portal:0000@portaldatabase.i8tnjca.mongodb.net/portal_db"
+);
 
 let portal_db = mongoose.connection;
 

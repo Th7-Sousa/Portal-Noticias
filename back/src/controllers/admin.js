@@ -7,6 +7,19 @@ class adminController {
     });
   };
 
+  static listarAdminPorId = (req, res) => {
+    const id = req.params.id;
+    admin.findById(id).exec((err, admin) => {
+      if (err) {
+        res
+          .status(400)
+          .send({ message: `${err.message} - Id do admin não localizado` });
+      } else {
+        res.status(200).send(admin);
+      }
+    });
+  };
+
   static cadastrarAdmin = (req, res) => {
     let adm = new admin(req.body);
     adm.save((err) => {

@@ -5,6 +5,7 @@ const router = express.Router();
 
 router
   .get("/admin", adminController.listarAdmin)
+  .get("/admin/:id", adminController.listarAdminPorId)
   .post("/admin", adminController.cadastrarAdmin)
   .put("/admin/:id", adminController.atualizarAdmin)
   .delete("/admin/:id", adminController.excluirAdmin);
