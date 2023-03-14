@@ -10,20 +10,25 @@ const EditarPublicacao = () => {
             <Style>
                 <div className='criarPubli-page'>
 
-                    <div className="nav"><NavAdmin /></div>
+                    <div className='container-navbar'>
+                        <NavAdmin />
+                    </div>
 
-                    <h1>Criar Publicação</h1>
+                    <h1>Editar Publicação</h1>
 
                     <form>
+                        <div className='section-image'>
+                            <img src={PublicacaoImg} alt="Publish" />
+                            <label>Alterar imagem:</label>
+                            <input type="file" name='' />
+                        </div>
+
                         <div className='section-titulo'>
                             <label>Título:</label>
                             <input type="text" value='Titulo teste test123' />
                         </div>
 
-                        <div className='section-image'>
-                            <img src={PublicacaoImg} alt="Publish" />
-                            <button>Alterar imagem</button>
-                        </div>
+
 
                         <div className='section-descricao'>
                             <label>Descrição:</label>
@@ -32,7 +37,6 @@ const EditarPublicacao = () => {
                         <div className='section-button'>
                             <ButtonDefault name='Salvar Alterações' />
                         </div>
-                        <a id='voltar' href="/gerenciarPublicacoes">Voltar</a>
                     </form>
 
                 </div>

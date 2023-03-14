@@ -1,22 +1,19 @@
 import { Style } from './styles'
 
-const PerfilUser = () => {
+const PerfilAdmin = () => {
     return (
         <>
             <Style>
-                <div className='perfilUser-page'>
+                <div className='perfilAdmin-page'>
 
-                    <h1>Perfil do Usuário</h1>
+                    <h1>Perfil do Administrador</h1>
 
-                    <div>
+                    <div className='dados'>
                         <p><b> Nome:</b> <br />
-                            Alice da Silva</p>
-
-                        <p><b> Curso:</b> <br />
-                            Pedagogia</p>
+                            Epaminôndas Glaciatus</p>
 
                         <p><b> Email:</b> <br />
-                            alice@gmail.com</p>
+                            epa@gmail.com</p>
 
                         <a className="opem-modal-teste" href="#openModal-about">
                             <button>Editar Perfil</button>
@@ -50,4 +47,4 @@ const PerfilUser = () => {
     );
 };
 
-export default PerfilUser;
+export default PerfilAdmin;

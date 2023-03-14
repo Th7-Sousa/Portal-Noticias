@@ -9,19 +9,23 @@ const CriarPublicacao = () => {
             <Style>
                 <div className='criarPubli-page'>
 
-                    <div className="nav"><NavAdmin /></div>
+                    <div className='container-navbar'>
+                        <NavAdmin />
+                    </div>
 
-                    <h1>Criar Publicação</h1>
+                    <div className="container-title">
+                        <h1>Criar Publicação</h1>
+                    </div>
 
                     <form>
                         <div className='section-titulo'>
                             <label>Título:</label>
-                            <input type="text" />
+                            <input className='input-titulo' type="text" />
                         </div>
 
                         <div className='section-image'>
                             <label>Arquivo de imagem:</label>
-                            <button>Escolher arquivo</button>
+                            <input className='input-file' type="file" accept="image/png, image/jpeg" />
                         </div>
 
                         <div className='section-descricao'>
@@ -31,7 +35,6 @@ const CriarPublicacao = () => {
                         <div className='section-button'>
                             <ButtonDefault name='Publicar' />
                         </div>
-                        <a id='voltar' href="/gerenciarPublicacoes">Voltar</a>
                     </form>
 
                 </div>

@@ -8,33 +8,50 @@ export const Style = Styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 4rem 3rem 4rem;
-    gap: 1rem;
+    gap: 2rem;
     height: 100vh;
 }
 
-.nav {
-    display: flex;
-    padding: 5px;
+.container-navbar{
     width: 100%;
-    justify-content: flex-end;
+}
+
+.container-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    border-bottom: 2px solid #127F30;
+    padding-bottom: 5px;
 }
 
 form {
+  background-color: #fff;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1.5rem;
-
+  border: 1px solid #000;
   max-width: max-content;
+  padding: 1.6rem 2rem;
+  border-radius: 7px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 label {
     font-weight: 500;
+    color: #476F40;
 }
 
-input, textarea{
+input-titulo, textarea{
     border: 1.5px solid #000;
-    border-radius: 5px;
+    border-radius: 7px;
     width: 100%;
     padding: 0.2rem 0.3rem;
 }
@@ -49,7 +66,7 @@ input, textarea{
 .section-image {
     display: flex;
     gap: 0.3rem;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .section-image button {

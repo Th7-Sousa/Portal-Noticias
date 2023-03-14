@@ -27,7 +27,8 @@ export const Style = Styled.div`
 }
 
 .img-principal {
-    max-width: 240px;
+    width: 240px;
+    height: 215px;
     border-radius: 15px 15px 0 0;
 }
 

@@ -1,6 +1,9 @@
 import React from "react";
 import { Style } from './styles'
+
 import PublicacaoImg from "./../../assets/publicacao-teste.png"
+import Publicacao2 from "./../../assets/publicacao-teste2.png"
+
 import AdminCardPubli from "./../../components/adminCardPubli/index"
 import ButtonDefault from "../../components/button-default";
 import Rodape from "../../components/rodape";
@@ -12,23 +15,30 @@ const GerenciarPublicacoes = () => {
             <Style>
                 <div className="gerenciar-page">
 
-                    <div className="nav"><NavAdmin /></div>
+
+                    <div className='container-nav'>
+                        <div className='edit-logout'>
+                            <a href="/perfilAdmin" className='editar-perfil' >Perfil</a>
+                            <button className='btn-sair' >Sair</button>
+                        </div>
+                    </div>
 
 
 
-                    <h1>Gerenciar Publicações</h1>
-
+                    <div className="container-title">
+                        <h1>Gerenciar Publicações</h1>
+                    </div>
                     <div className="container-publicacoes">
 
                         <a className="opem-modal-teste" href="#openModal-about">
-                            <AdminCardPubli img={PublicacaoImg} titulo='Titulo de testee Tit de testee abc aaaaa aaaaaaa aaaaaaa aaaaaaaaaa sssss.' />
+                            <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
                         </a>
-                        <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
+                        <AdminCardPubli img={Publicacao2} titulo='Titulo de teste' />
                         <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
 
+                        <AdminCardPubli img={Publicacao2} titulo='Titulo de teste' />
                         <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
-                        <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
-                        <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
+                        <AdminCardPubli img={Publicacao2} titulo='Titulo de teste' />
 
                     </div>
 

@@ -5,7 +5,7 @@ const Rodape = () => {
     return (
         <Style>
             <div className='rodape'>
-                <p>©2023 Copyright - Portal Unifesspa F5</p>
+                <p>© 2023 Portal Unifesspa F5</p>
             </div>
         </Style>
     )

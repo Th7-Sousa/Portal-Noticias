@@ -7,17 +7,35 @@ export const Style = Styled.div`
     flex-direction: column;
     align-items: center;
     padding: 0 4rem 5rem 4rem;
+    gap: 1.5rem;
 }
 
-
-.nav {
-    display: flex;
-    padding: 5px;
+.container-nav{
     width: 100%;
+    display: flex;
+    flex-direction: row;
     justify-content: flex-end;
+    padding-top: 1rem;
+}
+
+.edit-logout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.editar-perfil, .btn-sair {
+    text-decoration: none;
+    color: #000000;
+    padding: 5px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .container-publicacoes {
+    
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,9 +43,20 @@ export const Style = Styled.div`
     flex-wrap: wrap;
     gap: 3rem;
     width: 100%;
-    padding: 1.2rem 1rem;
-    border: 3px inset #127F30;
-    border-radius: 15px;
+    padding-bottom: 3rem;
+    border-bottom: 2px solid #000;
+}
+
+.container-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    border-bottom: 2px solid #127F30;
+    padding-bottom: 5px;
 }
 
 .container-button {
@@ -102,5 +131,14 @@ export const Style = Styled.div`
 }
 
 
+
+@media (max-width: 701px) {
+    .container-publicacoes {
+        justify-content: center;
+    }
+    .container-button {
+        justify-content: center;
+    }
+}
 
 `;

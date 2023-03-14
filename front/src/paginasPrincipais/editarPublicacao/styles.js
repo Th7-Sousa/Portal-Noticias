@@ -9,26 +9,38 @@ export const Style = Styled.div`
     align-items: center;
     padding: 0 4rem 3rem 4rem;
     height: 100vh;
+    gap: 0.5rem;
 }
 
-.nav {
-    display: flex;
-    padding: 5px;
+.container-navbar{
     width: 100%;
-    justify-content: flex-end;
+}
+
+h1 {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #127F30;
 }
 
 form {
+    margin-top: 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
-
+  gap: 0.8rem;
   max-width: max-content;
+
+  border: 1px solid #000;
+  padding: 1.3rem 2rem;
+  border-radius: 7px;
+
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 label {
     font-weight: 500;
+    color: #476F40;
 }
 
 input, textarea{
@@ -48,22 +60,19 @@ input, textarea{
 .section-image {
     display: flex;
     gap: 0.7rem;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
 }
 
 .section-image img{
-    max-width: 200px;
-    max-height 100px;
+    max-width: 120px;
+    max-height 80px;
 }
 
-.section-image button {
-    cursor: pointer;
-    border: 1px solid #068FDC;
-    background-color: #fff;
+.section-image input {
     padding: 5px;
     border-radius: 5px;
-    color: #068FDC;
+    border: none;
 }
 
 .section-button {
