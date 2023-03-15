@@ -7,13 +7,26 @@ export const Style = Styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 4rem 3rem 4rem;
+    padding: 1rem 4rem 3rem 4rem;
     gap: 2rem;
     height: 100vh;
 }
 
 .container-navbar{
     width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.voltar {
+    text-decoration: none;
+    color: #fff;
+    background-color: #068FDC;
+    padding: 0.8rem 4rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 0.6rem 3rem;
 }
 
 .container-title {
@@ -33,7 +46,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
   border: 1px solid #000;
   max-width: max-content;
   padding: 1.6rem 2rem;

@@ -37,26 +37,28 @@ export const Style = Styled.div`
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
+    padding-right: 3px;
 }
 
 .container-titulo p {
+    font-size: 15px;
     font-weight: bold;
-    padding: 0 0.3rem 0 0.2rem;
+    padding: 0 0 0 0.2rem;
     max-width: 170px;
     word-wrap:break-word;
 }
 
 .icon-option {
-    max-width: 20px;
+    max-width: 25px;
     cursor: pointer;
     opacity: 75%;
-    padding: 0.3rem 0.3rem 0 0;
+    padding: 0.3rem 0.3rem 0 0.2rem;
 }
 
 button {
     background-color: transparent;
     border: none;
-    border-left: 2px solid #000;
+    border: 1.5px solid #000;
 }
 
 `;

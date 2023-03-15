@@ -16,7 +16,7 @@ export const Style = Styled.div`
 
 .modal {
     background-color: #fff;
-    padding: 0 4rem 1rem 4rem;
+    padding: 2rem 4rem;
     border-radius: 1.5rem;
 }
 
@@ -35,7 +35,11 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.3rem;
+    gap: 2rem;
+}
+
+h3 {
+    padding-top: 2rem;
 }
 
 input {
@@ -61,6 +65,7 @@ input::placeholder {
 
 .section-link p{
     font-size: 14px;
+    padding-top: 1rem;
 }
 
 .link-login {

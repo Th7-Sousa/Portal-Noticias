@@ -1,16 +1,16 @@
-import { Style } from './styles'
-import ButtonDefault from "././../../components/button-default/index"
-import Rodape from "././../../components/rodape/index"
-import NavAdmin from '../../components/navAdmin';
+import { Style } from "./styles";
+import ButtonDefault from "././../../components/button-default/index";
+import Rodape from "././../../components/rodape/index";
 
 const CriarPublicacao = () => {
     return (
         <>
             <Style>
-                <div className='criarPubli-page'>
-
-                    <div className='container-navbar'>
-                        <NavAdmin />
+                <div className="criarPubli-page">
+                    <div className="container-navbar">
+                        <a href="/gerenciarPublicacoes" className="voltar">
+                            Voltar
+                        </a>
                     </div>
 
                     <div className="container-title">
@@ -18,25 +18,28 @@ const CriarPublicacao = () => {
                     </div>
 
                     <form>
-                        <div className='section-titulo'>
+                        <div className="section-titulo">
                             <label>Título:</label>
-                            <input className='input-titulo' type="text" />
+                            <input className="input-titulo" type="text" />
                         </div>
 
-                        <div className='section-image'>
+                        <div className="section-image">
                             <label>Arquivo de imagem:</label>
-                            <input className='input-file' type="file" accept="image/png, image/jpeg" />
+                            <input
+                                className="input-file"
+                                type="file"
+                                accept="image/png, image/jpeg"
+                            />
                         </div>
 
-                        <div className='section-descricao'>
+                        <div className="section-descricao">
                             <label>Descrição:</label>
                             <textarea cols="60" rows="10"></textarea>
                         </div>
-                        <div className='section-button'>
-                            <ButtonDefault name='Publicar' />
+                        <div className="section-button">
+                            <ButtonDefault name="Publicar" />
                         </div>
                     </form>
-
                 </div>
 
                 <Rodape />

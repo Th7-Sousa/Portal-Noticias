@@ -1,43 +1,98 @@
+import React from 'react';
 import { Style } from './styles'
+import { useNavigate } from "react-router-dom";
+
+import CloseIcon from "./../../assets/close-icon.svg"
 
 const PerfilAdmin = () => {
+
+    function Voltar() {
+        window.history.back();
+    }
+
+    const navigate = useNavigate();
+
     return (
         <>
             <Style>
                 <div className='perfilAdmin-page'>
-
-                    <h1>Perfil do Administrador</h1>
+                    <div>
+                        <a href='/gerenciarPublicacoes' className='voltar'>Voltar</a>
+                    </div>
 
                     <div className='dados'>
+
+                        <div className='dados-titulo'>
+                            <h1>Perfil do Administrador</h1>
+                        </div>
+
                         <p><b> Nome:</b> <br />
                             Epaminôndas Glaciatus</p>
 
                         <p><b> Email:</b> <br />
-                            epa@gmail.com</p>
+                            epaminodas@gmail.com</p>
 
-                        <a className="opem-modal-teste" href="#openModal-about">
-                            <button>Editar Perfil</button>
-                        </a>
+                        <div className='content-buttons'>
+                            <a className="opem-modal-teste" href="#modal-email">
+                                <button>Alterar email</button>
+                            </a>
+                            <a className="opem-modal-teste" href="#modal-senha">
+                                <button>Alterar senha</button>
+                            </a>
+                        </div>
 
                     </div>
 
-                    <div id="openModal-about" className="modalDialog">
-                        <div>
-                            <a href="#close" title="Close" className="close">X</a>
+                    <div id="modal-email" class="modal">
+                        <div class="modal__content">
+                            <h4>Alterar email</h4>
 
-                            <form>
-                                <h4>Editar perfil</h4>
-                                <label >Nome</label>
-                                <input value='Alice da Silva' type="text" />
+                            <div className="modal-content-buttons">
 
-                                <label >Curso</label>
-                                <input value='Pedagogia' type="text" />
+                                <form>
+                                    <input type="email" value='epaminodas@gmail.com' />
+                                    <section>
+                                        <label>Confirmar senha:</label>
+                                        <input type="password" />
+                                    </section>
+                                    <button id="modal-btn-editar">Salvar alterações</button>
+                                </form>
 
-                                <label >Email</label>
-                                <input value='alice@gmail.com' type="text" />
 
-                                <button className='btn-salvar'>Salvar Alterações</button>
-                            </form>
+                            </div>
+
+                            <a href="#" class="modal__close"><img className="modal-icon-close" src={CloseIcon} alt="Ícone fechar" /></a>
+                        </div>
+                    </div>
+
+
+
+                    <div id="modal-senha" class="modal">
+                        <div class="modal__content">
+                            <h4>Alterar senha</h4>
+
+                            <div className="modal-content-buttons">
+
+                                <form>
+                                    <section>
+                                        <label>Senha atual:</label>
+                                        <input type="password" />
+                                    </section>
+                                    <section>
+                                        <label>Nova senha:</label>
+                                        <input type="password" />
+                                    </section>
+                                    <section>
+                                        <label>Confirmar nova senha:</label>
+                                        <input type="password" />
+                                    </section>
+                                    <button id="modal-btn-editar">Salvar alterações</button>
+                                </form>
+
+
+                            </div>
+
+                            <a href="#" class="modal__close"><img className="modal-icon-close" src={CloseIcon} alt="Ícone fechar" /></a>
                         </div>
                     </div>
 

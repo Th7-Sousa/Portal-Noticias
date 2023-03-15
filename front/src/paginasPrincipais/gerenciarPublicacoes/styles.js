@@ -33,6 +33,9 @@ export const Style = Styled.div`
     border-radius: 4px;
     cursor: pointer;
 }
+.btn-sair {
+ padding: 8px 10px;
+}
 
 .container-publicacoes {
     
@@ -66,6 +69,10 @@ h1 {
     padding: 2rem 1rem 0 1rem ;
 }
 
+.container-rodape {
+    border: 2px solid red;
+    width: 100%;
+}
 
 
 .opem-modal-teste {
@@ -73,62 +80,76 @@ h1 {
     color: #000;
 }
 
-.modalDialog {
-    position: fixed;
-    top: 10rem;
-    right: 30rem;
-    bottom: 0;
-    left: 0;
-    
-    opacity:0;
-    -webkit-transition: opacity 100ms ease-in;
-    -moz-transition: opacity 100ms ease-in;
-    transition: opacity 100ms ease-in;
-    pointer-events: none;
-}
-.modalDialog:target {
-    opacity:1;
-    pointer-events: auto;
-}
-.modalDialog > div {
-    max-width: 80px;
-    width: 20%;
-    position: relative;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 3px;
-    background: #ccc;
+.modal {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(77, 77, 77, .7);
+  transition: all .4s;
 }
 
-.close {
-    position: absolute;
-    left: 5.8rem;
-    top: 5px;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
+.modal:target {
+  visibility: visible;
+  opacity: 1;
 }
 
-#tt1, #tt2 {
-    width: 4rem;
-    margin-top: 7px;
-    cursor: pointer;
-    border: none;
+.modal__content {
+  border-radius: 4px;
+  position: relative;
+  width: 300px;
+  max-width: 90%;
+  background: #fff;
+  padding: 1em 2em;
 }
 
-#tt1 {
-    background-color: green;
+.modal-content-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 3rem;
 }
 
-#tt2 {
-    background-color: red;
+#modal-btn-editar {
+  color: #fff;
+  background-color: #127F30;
+  padding: 0.5rem 0;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+.modal__footer {
+  text-align: right;
+}
+.modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #585858;
+  text-decoration: none;
+}
+
+.modal-icon-close {
+    width: 13px;
 }
 
 
-.container-rodape {
-    border: 2px solid red;
-    width: 100%;
-}
+
+
+
+
+
+
+
+
+
 
 
 

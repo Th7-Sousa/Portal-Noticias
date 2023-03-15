@@ -36,6 +36,7 @@ export const Style = Styled.div`
     border: 1px solid #000;
     border-radius: 4px;
     cursor: pointer;
+    width: 10rem;
 }
 
 

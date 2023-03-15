@@ -13,7 +13,9 @@ const AdminCardPubli = (prop) => {
                     <div className="container-titulo">
                         <p>{prop.titulo}</p>
                         <button>
-                            <img className='icon-option' src={IconOptions} alt="" />
+                            <a className="opem-modal-teste" href="#demo-modal">
+                                <img className='icon-option' src={IconOptions} alt="Configurações de publicaçao" />
+                            </a>
                         </button>
                     </div>
                 </div>
