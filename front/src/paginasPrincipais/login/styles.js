@@ -46,7 +46,7 @@ h3 {
 input {
     border: none;
     border-bottom: 1px solid #000;
-    padding-bottom: 3px;
+    padding: 5px;
     width: 100%;
 }
 input:focus {

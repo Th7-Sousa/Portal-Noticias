@@ -1,4 +1,7 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import useAuth from "../../components/hooks/useAuth";
+
 import { Style } from './styles'
 
 import PublicacaoImg from "./../../assets/publicacao-teste.png"
@@ -10,6 +13,10 @@ import ButtonDefault from "../../components/button-default";
 import Rodape from "../../components/rodape";
 
 const GerenciarPublicacoes = () => {
+
+    const { signout } = useAuth();
+    const navigate = useNavigate()
+
     return (
         <>
             <Style>
@@ -19,7 +26,9 @@ const GerenciarPublicacoes = () => {
                     <div className='container-nav'>
                         <div className='edit-logout'>
                             <a href="/perfilAdmin" className='editar-perfil' >Perfil</a>
-                            <button className='btn-sair' >Sair</button>
+                            <button className='btn-sair' onClick={() => [signout(), navigate("/login")]} >
+                                Sair
+                            </button>
                         </div>
                     </div>
 

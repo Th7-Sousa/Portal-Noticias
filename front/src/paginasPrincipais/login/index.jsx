@@ -1,10 +1,34 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../components/hooks/useAuth';
+
 import { Style } from './styles'
 import logo from './../../assets/logotipof5.png'
 
 const Login = () => {
 
-  function handleLogin(event) {
-    event.preventDefault();
+  const { signin } = useAuth();
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+
+  const handleLogin = () => {
+    if (!email | !password) {
+      setError("Preencha todos os campos");
+      return;
+    }
+
+    const res = signin(email, password);
+
+    if (res) {
+      setError(res);
+      return;
+    }
+
+    navigate("/gerenciarPublicacoes")
+
   }
 
   return (
@@ -19,31 +43,47 @@ const Login = () => {
               <h1>Portal Unifesspa F5</h1>
             </div>
 
-            <form onSubmit={handleLogin} >
+
+
+
+            <form>
 
               <h3>Login</h3>
 
-              <input type='email' placeholder='Insira seu email' />
-              <input type='password' placeholder='Insira sua senha' />
+              <input
+                type='email'
+                placeholder='Insira seu email'
+                value={email}
+                onChange={(e) => [setEmail(e.target.value), setError("")]}
+              />
+
+              <input
+                type='password'
+                placeholder='Insira sua senha'
+                value={password}
+                onChange={(e) => [setPassword(e.target.value), setError("")]}
+              />
 
 
-              <button >
-                <a id='link-provisorio' href="/home">Entrar</a>
+              <button type='submit' onClick={handleLogin}>
+                Entrar
               </button>
-
 
             </form>
 
+
+
+
+
             <section className='section-link'>
               <p>Não possui uma conta?
-                <a className='link-login' href="/">Cadastre-se</a
-                ></p>
+                <Link className='link-login' to="/cadastro">Cadastre-se</Link>
+              </p>
             </section>
 
             <section className='section-logo'>
               <img className='logo' src={logo} alt="Logo F5" />
             </section>
-            <a href="/gerenciarPublicacoes">Admin</a>
           </div>
 
         </div>

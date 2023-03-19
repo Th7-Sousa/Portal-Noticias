@@ -1,11 +1,14 @@
 import './index.css'
 import Rotas from '../src/Routers';
+import { AuthProvider } from './components/Context/auth';
 
 function App() {
 
   return (
     <div>
-      <Rotas />
+      <AuthProvider>
+        <Rotas />
+      </AuthProvider>
     </div>
   )
 }

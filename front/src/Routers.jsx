@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Cadastro from './paginasPrincipais/cadastro';
@@ -12,33 +13,42 @@ import CriarPublicacao from './paginasPrincipais/criarPublicacao';
 import EditarPublicacao from './paginasPrincipais/editarPublicacao';
 import PerfilAdmin from './paginasPrincipais/perfilAdmin';
 
+import useAuth from './components/hooks/useAuth';
+
+const NoFold = () => {
+    return <h1>Página não existe :/ <br /> <a href="/">Voltar</a></h1>
+}
+
+const Private = ({ Item }) => {
+    const { signed } = useAuth();
+
+    return signed > 0 ? <Item /> : <Login />;
+}
+
 
 const Rotas = () => {
-
-    const NoFold = () => {
-        return <h1>Página não existe :/ <br /> <a href="/">Voltar</a></h1>
-    }
-
     return (
         <BrowserRouter>
-            <Routes>
-                <Route index element={<Cadastro />} />
+            < Fragment>
+                <Routes>
+                    <Route index element={<Login />} />
 
-                <Route path="/" element={<Cadastro />} />
-                <Route path="/login" element={<Login />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/cadastro" element={<Cadastro />} />
 
-                <Route path="/gerenciarPublicacoes" element={<GerenciarPublicacoes />} />
-                <Route path="/criarPublicacao" element={<CriarPublicacao />} />
-                <Route path="/editarPublicacao" element={<EditarPublicacao />} />
-                <Route path="/perfilAdmin" element={<PerfilAdmin />} />
+                    <Route path="/gerenciarPublicacoes" element={<Private Item={GerenciarPublicacoes} />} />
+                    <Route path="/criarPublicacao" element={<CriarPublicacao />} />
+                    <Route path="/editarPublicacao" element={<EditarPublicacao />} />
+                    <Route path="/perfilAdmin" element={<PerfilAdmin />} />
 
-                <Route path="/home" element={<Home />} />
-                <Route path="/publicacao" element={<Publicacao />} />
-                <Route path="/perfilUser" element={<PerfilUser />} />
+                    <Route path="/home" element={<Home />} />
+                    <Route path="/publicacao" element={<Publicacao />} />
+                    <Route path="/perfilUser" element={<PerfilUser />} />
 
-                <Route path="*" element={<NoFold />} />
+                    <Route path="*" element={<NoFold />} />
 
-            </Routes>
+                </Routes>
+            </Fragment>
         </BrowserRouter>
     )
 }

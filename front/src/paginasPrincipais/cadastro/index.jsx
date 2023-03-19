@@ -1,11 +1,39 @@
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import useAuth from '../../components/hooks/useAuth';
+
 import { Style } from './styles'
 import logo from './../../assets/logotipof5.png'
 
 const Cadastro = () => {
 
-    function handleCadastro(event) {
-        event.preventDefault();
-    }
+    const { signup } = useAuth();
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState("")
+    const [emailConf, setEmailConf] = useState("")
+    const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
+
+    const handleSignup = () => {
+        if (!email | !emailConf | !password) {
+            setError("Preencha todos os campos");
+            return;
+        } else if (email !== emailConf) {
+            setError("Os e-mails não são iguais");
+            return;
+        }
+
+        const res = signup(email, password);
+
+        if (res) {
+            setError(res);
+            return;
+        }
+
+        alert("Usuário cadatrado com sucesso!");
+        navigate("/login");
+    };
 
     return (
         <>
@@ -18,21 +46,40 @@ const Cadastro = () => {
                             <h1>Bem vindo ao Portal Unifesspa F5 !</h1>
                         </div>
 
-                        <form onSubmit={handleCadastro} >
+                        <form >
 
                             <h3>Cadastre-se</h3>
 
-                            <input type='text' placeholder='Insira seu nome' />
-                            <input type='email' placeholder='Insira seu email' />
-                            <input type='password' placeholder='Criar senha' />
+                            <input
+                                type='email'
+                                placeholder='Insira seu email'
+                                value={email}
+                                onChange={(e) => [setEmail(e.target.value), setError("")]}
+                            />
 
-                            <button type='submit'>Criar conta</button>
+                            <input
+                                type='email'
+                                placeholder='Confirme seu email'
+                                value={emailConf}
+                                onChange={(e) => [setEmailConf(e.target.value), setError("")]}
+                            />
+
+                            <input
+                                type='password'
+                                placeholder='criar senha'
+                                value={password}
+                                onChange={(e) => [setPassword(e.target.value), setError("")]}
+                            />
+
+                            <button type='submit' onClick={handleSignup} >
+                                Criar conta
+                            </button>
                         </form>
 
                         <section className='section-link'>
                             <p>Já possui conta?
-                                <a className='link-login' href="/login">Login</a
-                                ></p>
+                                <Link className='link-login' to="/login">Login</Link>
+                            </p>
                         </section>
 
                         <section className='section-logo'>
