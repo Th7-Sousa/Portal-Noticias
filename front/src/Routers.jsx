@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Cadastro from './paginasPrincipais/cadastro';
 import Login from './paginasPrincipais/login';
+import NotFound from './paginasPrincipais/notFound';
 
 import Home from './paginasPrincipais/home';
 import Publicacao from './paginasPrincipais/publicacao';
@@ -14,10 +15,6 @@ import EditarPublicacao from './paginasPrincipais/editarPublicacao';
 import PerfilAdmin from './paginasPrincipais/perfilAdmin';
 
 import useAuth from './components/hooks/useAuth';
-
-const NoFold = () => {
-    return <h1>Página não existe :/ <br /> <a href="/">Voltar</a></h1>
-}
 
 const Private = ({ Item }) => {
     const { signed } = useAuth();
@@ -45,7 +42,7 @@ const Rotas = () => {
                     <Route path="/publicacao" element={<Publicacao />} />
                     <Route path="/perfilUser" element={<PerfilUser />} />
 
-                    <Route path="*" element={<NoFold />} />
+                    <Route path="*" element={<NotFound />} />
 
                 </Routes>
             </Fragment>
