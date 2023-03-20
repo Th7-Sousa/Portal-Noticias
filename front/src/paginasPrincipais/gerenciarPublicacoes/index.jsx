@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import useAuth from "../../components/hooks/useAuth";
 
 import { Style } from './styles'
@@ -65,7 +65,7 @@ const GerenciarPublicacoes = () => {
                             <h4>Configurações da publicação</h4>
 
                             <div className="modal-content-buttons">
-                                <button id="modal-btn-editar">Editar</button>
+                                <Link to='/editarPublicacao' id="modal-btn-editar">Editar</Link>
                                 <button id="modal-btn-excluir">Excluir</button>
                             </div>
 

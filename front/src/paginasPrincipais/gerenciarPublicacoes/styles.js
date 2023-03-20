@@ -123,6 +123,16 @@ h1 {
   border: none;
   border-radius: 7px;
   cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+}
+#modal-btn-excluir {
+  color: #fff;
+  background-color: #Ff0000;
+  padding: 0.65rem 0;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
 }
 
 .modal__footer {

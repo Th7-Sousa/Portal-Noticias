@@ -1,6 +1,7 @@
 import { Style } from "./styles";
 import ButtonDefault from "././../../components/button-default/index";
 import Rodape from "././../../components/rodape/index";
+import { Link } from "react-router-dom";
 
 const CriarPublicacao = () => {
     return (
@@ -8,9 +9,9 @@ const CriarPublicacao = () => {
             <Style>
                 <div className="criarPubli-page">
                     <div className="container-navbar">
-                        <a href="/gerenciarPublicacoes" className="voltar">
+                        <Link to="/gerenciarPublicacoes" className="voltar">
                             Voltar
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="container-title">

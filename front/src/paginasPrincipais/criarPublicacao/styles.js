@@ -97,12 +97,5 @@ input-titulo, textarea{
     justify-content: center;
 }
 
-#voltar {
-    border: 1px solid green;
-    padding: 0.3rem;
-    text-decoration: none;
-    border-radius: 4px;
-}
-
 
 `;

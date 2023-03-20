@@ -7,9 +7,20 @@ export const Style = Styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0 4rem 3rem 4rem;
+    padding: 2rem 4rem 3rem 4rem;
     height: 100vh;
     gap: 0.5rem;
+}
+
+.voltar {
+    text-decoration: none;
+    color: #fff;
+    background-color: #068FDC;
+    padding: 0.8rem 4rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 0.6rem 3rem;
 }
 
 .container-navbar{
@@ -79,13 +90,6 @@ input, textarea{
     width: 100%;
     display: flex;
     justify-content: center;
-}
-
-#voltar {
-    border: 1px solid green;
-    padding: 0.3rem;
-    text-decoration: none;
-    border-radius: 4px;
 }
 
 
