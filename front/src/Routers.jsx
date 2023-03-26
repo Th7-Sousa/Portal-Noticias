@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import Cadastro from './paginasPrincipais/cadastro';
 import Login from './paginasPrincipais/login';
 import NotFound from './paginasPrincipais/notFound';
 
@@ -28,10 +27,9 @@ const Rotas = () => {
         <BrowserRouter>
             < Fragment>
                 <Routes>
-                    <Route index element={<Login />} />
+                    <Route index element={<Home />} />
 
                     <Route path="/login" element={<Login />} />
-                    <Route path="/cadastro" element={<Cadastro />} />
 
                     <Route path="/gerenciarPublicacoes" element={<Private Item={GerenciarPublicacoes} />} />
                     <Route path="/criarPublicacao" element={<CriarPublicacao />} />
