@@ -6,7 +6,7 @@ const router = express.Router();
 router
   .get("/publicacoes", publicacoesController.listarPubli)
   .post("/publicacoes", publicacoesController.novaPubli)
-  .put("/publicacoes", publicacoesController.atualizarPubli)
+  .put("/publicacoes/:id", publicacoesController.atualizarPubli)
   .delete("/publicacoes/:id", publicacoesController.excluirPubli);
 
 export default router;
