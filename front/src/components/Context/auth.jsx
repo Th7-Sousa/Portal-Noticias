@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import axios from "axios";
 
 export const AuthContext = createContext({});
 
@@ -15,11 +16,37 @@ export const AuthProvider = ({ children }) => {
       );
 
       if (hasUser) setUser(hasUser[0]);
+    } else {
+      init();
     }
   }, []);
 
+  const init = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/admin");
+      const admin = response.data[0];
+
+      localStorage.setItem("user_token", JSON.stringify({ email: admin.email }));
+      localStorage.setItem("admin_email", admin.email);
+      localStorage.setItem("admin_password", admin.senha);
+
+      setUser(admin);
+    } catch (error) {
+      console.log("Erro ao buscar usuário admin:", error);
+    }
+  };
+
   const signin = (email, password) => {
     const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
+    const adminEmail = localStorage.getItem("admin_email");
+    const adminPassword = localStorage.getItem("admin_password");
+
+    if (email === adminEmail && password === adminPassword) {
+      const token = Math.random().toString(36).substring(2);
+      localStorage.setItem("user_token", JSON.stringify({ email, token }));
+      setUser({ email, password });
+      return;
+    }
 
     const hasUser = usersStorage?.filter((user) => user.email === email);
 
@@ -37,36 +64,17 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signup = (email, password) => {
-    const usersStorage = JSON.parse(localStorage.getItem("users_bd"));
 
-    const hasUser = usersStorage?.filter((user) => user.email === email);
-
-    if (hasUser?.length) {
-      return "Já tem uma conta com esse E-mail";
-    }
-
-    let newUser;
-
-    if (usersStorage) {
-      newUser = [...usersStorage, { email, password }];
-    } else {
-      newUser = [{ email, password }];
-    }
-
-    localStorage.setItem("users_bd", JSON.stringify(newUser));
-
-    return;
-  };
 
   const signout = () => {
     setUser(null);
     localStorage.removeItem("user_token");
+    localStorage.removeItem("users_bd")
   };
 
   return (
     <AuthContext.Provider
-      value={{ user, signed: !!user, signin, signup, signout }}
+      value={{ user, signed: !!user, signin, signout }}
     >
       {children}
     </AuthContext.Provider>

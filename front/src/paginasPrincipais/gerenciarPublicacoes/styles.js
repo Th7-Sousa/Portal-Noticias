@@ -41,19 +41,35 @@ export const Style = Styled.div`
     
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: top;
     flex-wrap: wrap;
     gap: 3rem;
     width: 100%;
-    padding-bottom: 3rem;
-    border-bottom: 2px solid #000;
+    padding-bottom: 2rem;
 }
 
-.container-title {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.card-publi {
+  max-width: min-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  border: 2px solid #127F30;
+  border-radius: 5px;
+}
+
+.img-publi {
+  width: 240px;
+  height: 160px;
+  border-radius: 2px 2px 0 0;
+}
+
+.container-title-config {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding-right 1px;
 }
 
 h1 {
@@ -61,18 +77,48 @@ h1 {
     border-bottom: 2px solid #127F30;
     padding-bottom: 5px;
 }
+h5 {
+  text-align: justify;
+  padding: 4px;
+}
+
+
+.icon-option {
+  max-width: 30px;
+  cursor: pointer;
+  opacity: 75%;
+  padding: 0.1rem;
+  border: 2px solid #127F30;
+  border-radius: 3px;
+}
+
+
+
+
+
+
+
 
 .container-button {
     display: flex;
     justify-content: flex-start;
     width: 100%;
     padding: 2rem 1rem 0 1rem ;
+    border-top: 2px solid #000;
 }
 
 .container-rodape {
     border: 2px solid red;
     width: 100%;
 }
+
+
+
+
+
+
+
+
 
 
 .opem-modal-teste {

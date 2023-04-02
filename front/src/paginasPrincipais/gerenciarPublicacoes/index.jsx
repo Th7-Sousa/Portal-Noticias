@@ -1,12 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import useAuth from "../../components/hooks/useAuth";
+import axios from "axios";
 
 import { Style } from './styles'
-
-import PublicacaoImg from "./../../assets/publicacao-teste.png"
-import Publicacao2 from "./../../assets/publicacao-teste2.png"
 import CloseIcon from "./../../assets/close-icon.svg"
+import IconOptions from "./../../assets/icon-option.svg"
 
 import AdminCardPubli from "./../../components/adminCardPubli/index"
 import ButtonDefault from "../../components/button-default";
@@ -16,6 +15,18 @@ const GerenciarPublicacoes = () => {
 
     const { signout } = useAuth();
     const navigate = useNavigate()
+
+    const [publicacoes, setPublicacoes] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3001/publicacoes')
+            .then(response => {
+                setPublicacoes(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }, []);
 
     return (
         <>
@@ -37,17 +48,28 @@ const GerenciarPublicacoes = () => {
                     <div className="container-title">
                         <h1>Gerenciar Publicações</h1>
                     </div>
+
+
                     <div className="container-publicacoes">
+                        {publicacoes.map(publicacao => (
+                            <div className="card-publi" key={publicacao._id}>
 
-                        <AdminCardPubli img={PublicacaoImg} titulo='Titulo teste' />
-                        <AdminCardPubli img={Publicacao2} titulo='Titulo de teste' />
-                        <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
+                                <div>
+                                    <img className="img-publi" src={publicacao.diretorio} alt={publicacao.titulo} />
 
-                        <AdminCardPubli img={Publicacao2} titulo='Titulo de teste' />
-                        <AdminCardPubli img={PublicacaoImg} titulo='Titulo de teste' />
-                        <AdminCardPubli img={Publicacao2} titulo='Titulo de teste' />
+                                </div>
+                                <div className="container-title-config">
+                                    <h5>{publicacao.titulo}</h5>
+                                    <a className="opem-modal" href="#config-modal">
+                                        <img className='icon-option' src={IconOptions} alt="Configurações de publicaçao" />
+                                    </a>
+                                </div>
+                            </div>
 
+                        ))}
                     </div>
+
+
 
                     <div className="container-button">
 
@@ -60,7 +82,7 @@ const GerenciarPublicacoes = () => {
 
 
 
-                    <div id="demo-modal" class="modal">
+                    <div id="config-modal" class="modal">
                         <div class="modal__content">
                             <h4>Configurações da publicação</h4>
 

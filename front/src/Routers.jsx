@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 
 import Login from './paginasPrincipais/login';
 import NotFound from './paginasPrincipais/notFound';
@@ -15,11 +15,18 @@ import PerfilAdmin from './paginasPrincipais/perfilAdmin';
 
 import useAuth from './components/hooks/useAuth';
 
-const Private = ({ Item }) => {
-    const { signed } = useAuth();
 
-    return signed > 0 ? <Item /> : <Login />;
-}
+const PrivateRoute = ({ path, ...props }) => {
+    const { isAuthenticated } = useAuth();
+
+    return isAuthenticated ? (
+        <Route {...props} path={path} />
+    ) : (
+        <Navigate to="/login" />
+
+    );
+};
+
 
 
 const Rotas = () => {
@@ -31,7 +38,9 @@ const Rotas = () => {
 
                     <Route path="/login" element={<Login />} />
 
-                    <Route path="/gerenciarPublicacoes" element={<Private Item={GerenciarPublicacoes} />} />
+                    {/* <Route path="/gerenciarPublicacoes" element={<PrivateRoute element={<GerenciarPublicacoes />} />} /> */}
+
+                    <Route path="/gerenciarPublicacoes" element={<GerenciarPublicacoes />} />
                     <Route path="/criarPublicacao" element={<CriarPublicacao />} />
                     <Route path="/editarPublicacao" element={<EditarPublicacao />} />
                     <Route path="/perfilAdmin" element={<PerfilAdmin />} />
