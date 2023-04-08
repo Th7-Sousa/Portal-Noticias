@@ -114,13 +114,6 @@ h5 {
 
 
 
-
-
-
-
-
-
-
 .opem-modal-teste {
     text-decoration: none;
     color: #000;
@@ -196,18 +189,9 @@ h5 {
     width: 13px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+.loading {
+  padding-bottom: 14.450rem;
+}
 
 @media (max-width: 701px) {
     .container-publicacoes {

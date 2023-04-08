@@ -97,5 +97,13 @@ input-titulo, textarea{
     justify-content: center;
 }
 
+button {
+    color: #fff;
+    background-color: #127F30;
+    padding: 0.8rem 4rem;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
 
 `;
