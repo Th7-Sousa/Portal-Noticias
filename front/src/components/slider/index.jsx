@@ -7,7 +7,7 @@ import imagem2 from '../../../repository_destaques/img5.png';
 import imagem3 from '../../../repository_destaques/img3.png';
 import imagem4 from '../../../repository_destaques/img1.png';
 import imagem5 from '../../../repository_destaques/img4.png';
-import './styles.css';
+import { Style } from './styles.js';
 
 const settings = {
   dots: true,
@@ -25,6 +25,7 @@ const settings = {
 const Carousel = () => {
   return (
     <div>
+      <Style>
       <Slider {...settings}>
         <div>
           <img src={imagem1} alt="Imagem do slide 1" className="slide-image" />
@@ -42,6 +43,7 @@ const Carousel = () => {
           <img src={imagem5} alt="Imagem do slide 5" className="slide-image" />
         </div>
       </Slider>
+      </Style>
     </div>
   );
 };

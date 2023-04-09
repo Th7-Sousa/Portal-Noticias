@@ -1,4 +1,8 @@
-.slide-image {
+import Styled from "styled-components";
+
+export const Style = Styled.div`
+
+  .slide-image {
     width: 100vw;
     height: 350px;
     object-fit: cover;
@@ -15,4 +19,5 @@
     background-color: #127f30;
     margin-top: 3rem;
   }
-  
+
+  `;
