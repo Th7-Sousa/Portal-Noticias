@@ -42,7 +42,8 @@ const Rotas = () => {
 
                     <Route path="/gerenciarPublicacoes" element={<GerenciarPublicacoes />} />
                     <Route path="/criarPublicacao" element={<CriarPublicacao />} />
-                    <Route path="/editarPublicacao" element={<EditarPublicacao />} />
+                    <Route path="/editarPublicacao/:id" component={EditarPublicacao} />
+
                     <Route path="/perfilAdmin" element={<PerfilAdmin />} />
 
                     <Route path="/home" element={<Home />} />

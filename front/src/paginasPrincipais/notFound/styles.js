@@ -9,7 +9,7 @@ export const Style = Styled.div`
     justify-content: center;
     align-items: center;
     gap: 3rem;
-    padding: 2rem; 
+    padding: 2rem 1rem 4rem 1rem; 
    
     background-color: #ffffff;
 }
@@ -21,7 +21,7 @@ export const Style = Styled.div`
     max-width: max-content;
 }
 .content-img-main img {
-    max-width: 80%;
+    max-width: 70%;
 }
 
 .content-mesage {

@@ -3,9 +3,9 @@ import { useNavigate, Link } from "react-router-dom";
 import useAuth from "../../components/hooks/useAuth";
 import axios from "axios";
 
+import EditarPublicacao from "../editarPublicacao";
+
 import { Style } from './styles'
-import CloseIcon from "./../../assets/close-icon.svg"
-import IconOptions from "./../../assets/icon-option.svg"
 import ButtonDefault from "../../components/button-default";
 import Rodape from "../../components/rodape";
 
@@ -46,6 +46,7 @@ const GerenciarPublicacoes = () => {
     };
 
 
+
     return (
         <>
             <Style>
@@ -74,18 +75,17 @@ const GerenciarPublicacoes = () => {
 
                                     <div>
                                         <img className="img-publi" src={publicacao.diretorio} alt={publicacao.titulo} />
-
                                     </div>
-                                    <div className="container-title-config">
+
+                                    <div className="container-title-buttons">
+
                                         <h5>{publicacao.titulo}</h5>
-                                        <a className="opem-modal" href="#config-modal">
-                                            <img className='icon-option' src={IconOptions} alt="Configurações de publicaçao" />
-                                        </a>
+
+                                        <div className="container-buttons">
+                                            <button id="btn-excluir" onClick={() => handleExcluirPublicacao(publicacao._id)}>Excluir</button>
+                                            <button id="btn-editar">Editar</button>
+                                        </div>
                                     </div>
-
-                                    {/* Adicionando botão de excluir */}
-                                    <button onClick={() => handleExcluirPublicacao(publicacao._id)}>Excluir</button>
-
                                 </div>
 
                             ))}
@@ -93,27 +93,16 @@ const GerenciarPublicacoes = () => {
 
                     )}
 
-                    <div className="container-button">
+                    <div className="container-button-criar">
                         <a href="/criarPublicacao">
                             <ButtonDefault name='Criar nova Publicação' />
                         </a>
                     </div>
 
-                    <div id="config-modal" className="modal">
-                        <div className="modal__content">
-                            <h4>Configurações da publicação</h4>
-
-                            <div className="modal-content-buttons">
-                                <Link to='/editarPublicacao' id="modal-btn-editar">Editar</Link>
-                                <button id="modal-btn-excluir">Excluir</button>
-                            </div>
-
-                            <a href="#" className="modal__close"><img className="modal-icon-close" src={CloseIcon} alt="Ícone fechar" /></a>
-                        </div>
-                    </div>
                 </div>
                 <Rodape />
             </Style>
+
         </>
 
     )
