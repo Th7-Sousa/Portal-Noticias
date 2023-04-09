@@ -2,7 +2,7 @@ import React from "react";
 import ResponsiveAppBar from "../../components/navBar/Nav";
 import Noticias from "../../components/noticias";
 import Rodape from "../../components/rodape";
-import Slider from "../../components/slider";
+import Caroussel from "../../components/slider";
 import { Style } from './style'
 
 const Home = () => {
@@ -11,7 +11,7 @@ const Home = () => {
       <Style>
       <div className='conteudo'>
         <ResponsiveAppBar/>
-        <Slider/>
+        <Caroussel/>
         <Noticias/>
         <Rodape/>
       </div>
