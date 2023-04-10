@@ -6,13 +6,11 @@ import Rodape from "././../../components/rodape/index";
 import { Link } from "react-router-dom";
 
 const CriarPublicacao = () => {
-
     const [publicacao, setPublicacao] = useState({
         titulo: "",
         descricao: "",
-        imagem: null,
+        diretorio: null,
     });
-
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -22,10 +20,10 @@ const CriarPublicacao = () => {
         }));
     };
 
-    const handleImageChange = (event) => {
+    const handleDiretorioChange = (event) => {
         setPublicacao((prevState) => ({
             ...prevState,
-            imagem: event.target.files[0],
+            diretorio: event.target.files[0],
         }));
     };
 
@@ -35,7 +33,7 @@ const CriarPublicacao = () => {
         const formData = new FormData();
         formData.append("titulo", publicacao.titulo);
         formData.append("descricao", publicacao.descricao);
-        formData.append("imagem", publicacao.imagem);
+        formData.append("diretorio", publicacao.diretorio);
 
         try {
             const response = await axios.post(
@@ -53,7 +51,6 @@ const CriarPublicacao = () => {
         }
     };
 
-
     return (
         <>
             <Style>
@@ -68,7 +65,6 @@ const CriarPublicacao = () => {
                         <h1>Criar Publicação</h1>
                     </div>
 
-
                     <form onSubmit={handleSubmit}>
                         <div className="section-titulo">
                             <label htmlFor="titulo">Título:</label>
@@ -82,15 +78,15 @@ const CriarPublicacao = () => {
                             />
                         </div>
 
-                        <div className="section-image">
-                            <label htmlFor="imagem">Arquivo de imagem:</label>
+                        <div className="section-diretorio">
+                            <label htmlFor="diretorio">Arquivo de imagem:</label>
                             <input
-                                id="imagem"
-                                name="imagem"
+                                id="diretorio"
+                                name="diretorio"
                                 className="input-file"
                                 type="file"
                                 accept="image/png, image/jpeg"
-                                onChange={handleImageChange}
+                                onChange={handleDiretorioChange}
                             />
                         </div>
 
@@ -110,7 +106,6 @@ const CriarPublicacao = () => {
                             <button type="submit">Publicar</button>
                         </div>
                     </form>
-
                 </div>
 
                 <Rodape />

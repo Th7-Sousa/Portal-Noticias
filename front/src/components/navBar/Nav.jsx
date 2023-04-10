@@ -141,7 +141,7 @@ function ResponsiveAppBar() {
               < Style>
                 <button className='entra-admin-btn'>
                   <Link className='entrar-admin' to="/login" >
-                    Entrar como administrador
+                    Administrador
                   </Link>
                 </button>
               </Style>

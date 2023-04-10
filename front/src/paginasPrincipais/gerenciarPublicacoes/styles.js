@@ -60,7 +60,7 @@ export const Style = Styled.div`
 }
 
 .img-publi {
-  width: 240px;
+  width: 233px;
   height: 160px;
   border-radius: 2px 2px 0 0;
 }

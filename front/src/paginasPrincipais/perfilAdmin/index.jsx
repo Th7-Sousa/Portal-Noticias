@@ -1,16 +1,53 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Style } from './styles'
 import { useNavigate } from "react-router-dom";
-
 import CloseIcon from "./../../assets/close-icon.svg"
 
 const PerfilAdmin = () => {
+    const [email, setEmail] = useState('thiagof.profissional@gmail.com');
+    const navigate = useNavigate();
+
+    const [admin, setAdmin] = useState([]);
 
     function Voltar() {
         window.history.back();
     }
 
-    const navigate = useNavigate();
+    useEffect(() => {
+        async function getAdmin() {
+            try {
+                const response = await axios.get('http://localhost:3001/admin');
+                setAdmin(response.data);
+
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getAdmin();
+    }, []);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        fetch('http://localhost:3001/admin', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Dados do admin atualizados:', data);
+                // Atualiza o email do admin no estado
+                setEmail(data.email);
+                // Fecha o modal
+                const modal = document.getElementById('modal-email');
+                modal.classList.remove('open');
+            })
+            .catch((error) => {
+                console.error('Erro ao atualizar os dados do admin:', error);
+            });
+    }
 
     return (
         <>
@@ -27,75 +64,37 @@ const PerfilAdmin = () => {
                         </div>
 
                         <p><b> Nome:</b> <br />
-                            Epaminôndas Glaciatus</p>
+                            Thiago Fernandes</p>
 
                         <p><b> Email:</b> <br />
-                            epaminodas@gmail.com</p>
+                            {email}</p>
 
                         <div className='content-buttons'>
                             <a className="opem-modal-teste" href="#modal-email">
                                 <button>Alterar email</button>
                             </a>
-                            <a className="opem-modal-teste" href="#modal-senha">
-                                <button>Alterar senha</button>
-                            </a>
+
                         </div>
 
                     </div>
 
-                    <div id="modal-email" class="modal">
-                        <div class="modal__content">
+                    <div id="modal-email" className="modal">
+                        <div className="modal__content">
                             <h4>Alterar email</h4>
 
                             <div className="modal-content-buttons">
 
-                                <form>
-                                    <input type="email" value='epaminodas@gmail.com' />
-                                    <section>
-                                        <label>Confirmar senha:</label>
-                                        <input type="password" />
-                                    </section>
+                                <form onSubmit={handleSubmit}>
+                                    <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+
                                     <button id="modal-btn-editar">Salvar alterações</button>
                                 </form>
 
-
                             </div>
 
-                            <a href="#" class="modal__close"><img className="modal-icon-close" src={CloseIcon} alt="Ícone fechar" /></a>
+                            <a href="#" className="modal__close"><img className="modal-icon-close" src={CloseIcon} alt="Ícone fechar" /></a>
                         </div>
                     </div>
-
-
-
-                    <div id="modal-senha" class="modal">
-                        <div class="modal__content">
-                            <h4>Alterar senha</h4>
-
-                            <div className="modal-content-buttons">
-
-                                <form>
-                                    <section>
-                                        <label>Senha atual:</label>
-                                        <input type="password" />
-                                    </section>
-                                    <section>
-                                        <label>Nova senha:</label>
-                                        <input type="password" />
-                                    </section>
-                                    <section>
-                                        <label>Confirmar nova senha:</label>
-                                        <input type="password" />
-                                    </section>
-                                    <button id="modal-btn-editar">Salvar alterações</button>
-                                </form>
-
-
-                            </div>
-
-                            <a href="#" class="modal__close"><img className="modal-icon-close" src={CloseIcon} alt="Ícone fechar" /></a>
-                        </div>
-                    </div>
-
                 </div>
             </Style>
         </>

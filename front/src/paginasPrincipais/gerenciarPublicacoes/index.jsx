@@ -83,7 +83,7 @@ const GerenciarPublicacoes = () => {
 
                                         <div className="container-buttons">
                                             <button id="btn-excluir" onClick={() => handleExcluirPublicacao(publicacao._id)}>Excluir</button>
-                                            <button id="btn-editar">Editar</button>
+
                                         </div>
                                     </div>
                                 </div>
