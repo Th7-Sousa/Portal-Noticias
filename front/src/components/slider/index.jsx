@@ -26,23 +26,23 @@ const Carousel = () => {
   return (
     <div>
       <Style>
-      <Slider {...settings}>
-        <div>
-          <img src={imagem1} alt="Imagem do slide 1" className="slide-image" />
-        </div>
-        <div>
-          <img src={imagem2} alt="Imagem do slide 2" className="slide-image" />
-        </div>
-        <div>
-          <img src={imagem3} alt="Imagem do slide 3" className="slide-image" />
-        </div>
-        <div>
-          <img src={imagem4} alt="Imagem do slide 4" className="slide-image" />
-        </div>
-        <div>
-          <img src={imagem5} alt="Imagem do slide 5" className="slide-image" />
-        </div>
-      </Slider>
+        <Slider {...settings}>
+          <div>
+            <img src={imagem4} alt="Imagem do slide 1" className="slide-image" />
+          </div>
+          <div>
+            <img src={imagem2} alt="Imagem do slide 2" className="slide-image" />
+          </div>
+          <div>
+            <img src={imagem3} alt="Imagem do slide 3" className="slide-image" />
+          </div>
+          <div>
+            <img src={imagem1} alt="Imagem do slide 4" className="slide-image" />
+          </div>
+          <div>
+            <img src={imagem2} alt="Imagem do slide 5" className="slide-image" />
+          </div>
+        </Slider>
       </Style>
     </div>
   );

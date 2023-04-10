@@ -5,8 +5,6 @@ import Login from './paginasPrincipais/login';
 import NotFound from './paginasPrincipais/notFound';
 
 import Home from './paginasPrincipais/home';
-import Publicacao from './paginasPrincipais/publicacao';
-import PerfilUser from './paginasPrincipais/perfilUser';
 
 import GerenciarPublicacoes from './paginasPrincipais/gerenciarPublicacoes';
 import CriarPublicacao from './paginasPrincipais/criarPublicacao';
@@ -47,8 +45,6 @@ const Rotas = () => {
                     <Route path="/perfilAdmin" element={<PerfilAdmin />} />
 
                     <Route path="/home" element={<Home />} />
-                    <Route path="/publicacao" element={<Publicacao />} />
-                    <Route path="/perfilUser" element={<PerfilUser />} />
 
                     <Route path="*" element={<NotFound />} />
 

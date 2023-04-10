@@ -2,6 +2,8 @@ import Styled from "styled-components";
 
 export const Style = Styled.div`
 
+
+
   .slide-image {
     width: 100vw;
     height: 350px;

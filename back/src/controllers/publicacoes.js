@@ -1,19 +1,7 @@
 import publicacoes from "../models/Publicacoes.js";
-import { v4 as uuid } from "uuid";
-import multer from "multer";
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./../repository");
-  },
-  filename: function (req, file, cb) {
-    const ext = file.originalname.split(".").pop(); // extensão do arquivo
-    const filename = uuid + "." + ext; // arquivo exclusivo
-    cb(null, filename);
-  },
-});
-
-const upload = multer({ storage: storage });
+import fs from "fs";
+import path from "path";
 
 class publicacoesController {
   static listarPubli = (req, res) => {
@@ -22,42 +10,54 @@ class publicacoesController {
     });
   };
 
-  // static novaPubli = (req, res) => {
-  //   upload.single("imagem")(req, res, function (err) {
-  //     if (err) {
-  //       return res.status(500).send({ message: "Erro ao carregar a imagem" });
-  //     }
-
-  //     let publicacao = new publicacoes(req.body);
-
-  //     // caminho da imagem no campo diretorio
-  //     publicacao.diretorio = "/" + req.file.filename;
-
-  //     // salva a publicação no banco de dados
-  //     publicacao.save((err) => {
-  //       if (err) {
-  //         res.status(500).send({
-  //           message: `${err.message} - Falha ao adicionar publicação!`,
-  //         });
-  //       } else {
-  //         // retorna a publicação criada como JSON
-  //         res.status(201).send(publicacao.toJSON());
-  //       }
-  //     });
-  //   });
-  // };
-
   static novaPubli = (req, res) => {
-    let publicacao = new publicacoes(req.body);
-    publicacao.save((err) => {
-      if (err) {
-        res
-          .status(500)
-          .send({ message: `${err.message} - Falha ao adicionar publicação!` });
-      } else {
-        res.status(201).send(publicacao.toJSON());
-      }
+    const { titulo, descricao } = req.body;
+    const imagem = req.file; // recebe a imagem do corpo da solicitação
+
+    let diretorioImagem;
+    if (imagem) {
+      diretorioImagem = "./../repository/" + imagem.originalname;
+    }
+
+    const publicacao = new publicacoes({
+      titulo,
+      descricao,
+      diretorio: diretorioImagem,
     });
+
+    if (imagem) {
+      // salva a imagem no diretório especificado
+      fs.writeFile(
+        path.join(__dirname, diretorioImagem),
+        imagem.buffer,
+        (err) => {
+          if (err) {
+            return res.status(500).send({ message: err.message });
+          }
+          // salva a publicação no banco de dados
+          publicacao.save((err) => {
+            if (!err) {
+              res
+                .status(201)
+                .send({ message: "Publicação com imagem criada com sucesso!" });
+            } else {
+              // exclui a imagem salva caso ocorra erro ao salvar a publicação
+              fs.unlink(path.join(__dirname, diretorioImagem), () => {});
+              res.status(500).send({ message: err.message });
+            }
+          });
+        }
+      );
+    } else {
+      // salva a publicação sem imagem no banco de dados
+      publicacao.save((err) => {
+        if (!err) {
+          res.status(201).send({ message: "Publicação criada com sucesso!" });
+        } else {
+          res.status(500).send({ message: err.message });
+        }
+      });
+    }
   };
 
   static atualizarPubli = (req, res) => {
