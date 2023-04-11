@@ -10,7 +10,7 @@ portal_db.once("open", () => {
 
 const app = express();
 app.use(express.json());
-app.use(cors()); // middleware CORS: Permisão pra requisições de outros domínios
+app.use(cors()); //Permisão pra requisições de outros domínios
 routes(app);
 
 export default app;

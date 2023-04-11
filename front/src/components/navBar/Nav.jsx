@@ -16,6 +16,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Link } from 'react-router-dom';
 import { Style } from './styles'
 
+import Logo from "./../../assets/logotipof5.png"
+
 const pages = ['Feed de Noticias'];
 const settings = ['Entrar como administardor'];
 
@@ -52,7 +54,7 @@ function ResponsiveAppBar() {
         <AppBar position="static">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
-              <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+              <img style={{ width: "50px" }} src={Logo} alt="logo" />
               <Typography
                 variant="h6"
                 noWrap
@@ -68,7 +70,7 @@ function ResponsiveAppBar() {
                   textDecoration: 'none',
                 }}
               >
-                F5
+
               </Typography>
 
               <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
